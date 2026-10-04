@@ -1,5 +1,190 @@
+/* =========================
+   GAMING WEBSITE COLOURS
+   ========================= */
+
+:root {
+    --bg-dark: #0b0b12;
+    --bg-card: #151522;
+    --bg-light: #202033;
+
+    --purple: #8a2be2;
+    --purple-light: #b45cff;
+
+    --text-white: #ffffff;
+    --text-gray: #b8b8c7;
+
+    --border: #302f46;
+}
+
+/* =========================
+   GENERAL PAGE
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #08090d;
-    color: white;
     font-family: Arial, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-white);
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+header {
+    background: #10101a;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--purple-light);
+}
+
+nav a {
+    color: var(--text-white);
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: var(--purple-light);
+}
+
+/* =========================
+   HERO SECTION
+   ========================= */
+
+.hero {
+    text-align: center;
+    padding: 90px 20px;
+    background: linear-gradient(135deg, #0b0b12, #211033);
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--purple-light);
+}
+
+.hero p {
+    color: var(--text-gray);
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   SEARCH BOX
+   ========================= */
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-box input {
+    width: 400px;
+    padding: 15px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg-card);
+    color: white;
+    font-size: 16px;
+}
+
+.search-box button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    background: var(--purple);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background: var(--purple-light);
+}
+
+/* =========================
+   GAMES SECTION
+   ========================= */
+
+.games {
+    padding: 60px 50px;
+}
+
+.games h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+}
+
+/* =========================
+   GAME CARDS
+   ========================= */
+
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.game-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 25px;
+    transition: 0.3s;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--purple);
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
+}
+
+.game-card h3 {
+    color: var(--purple-light);
+    margin-bottom: 15px;
+}
+
+.game-card p {
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+.requirements {
+    margin-top: 15px;
+}
+
+.requirements strong {
+    color: white;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #10101a;
+    color: var(--text-gray);
+    margin-top: 50px;
 }
