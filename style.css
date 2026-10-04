@@ -1,4 +1,78 @@
 /* =========================
+   LAPTOP CHECKER
+   ========================= */
+
+.checker {
+    padding: 70px 20px;
+    background: #0f0f19;
+    text-align: center;
+}
+
+.checker h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.checker-description {
+    color: var(--text-gray);
+    margin-bottom: 35px;
+}
+
+.checker-box {
+    max-width: 500px;
+    margin: auto;
+    padding: 30px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    text-align: left;
+}
+
+.checker-box label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    color: var(--text-white);
+    font-weight: bold;
+}
+
+.checker-box input,
+.checker-box select {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: #0b0b12;
+    color: white;
+    font-size: 16px;
+}
+
+.checker-box button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background: var(--purple);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.checker-box button:hover {
+    background: var(--purple-light);
+}
+
+#result {
+    max-width: 500px;
+    margin: 30px auto 0;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+/* =========================
    GAME IMAGES
    ========================= */
 
