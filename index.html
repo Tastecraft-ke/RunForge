@@ -2,23 +2,228 @@
 <html lang="en">
 
 <head>
-    
     <meta charset="UTF-8">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>GameMatch</title>
-    
-    <link rel="stylesheet" href="style.css">
-    
-    <link rel="stylesheet" href="style.css">
+    <title>GameCheck - Laptop Game Compatibility</title>
 
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <h1>GameMatch</h1>
+    <!-- HEADER -->
+    <header>
 
-    <p>Find games that are compatible with your laptop.</p>
+        <div class="logo">
+            🎮 GameCheck
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#games">Games</a>
+            <a href="#about">About</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+
+        <h1>
+            Can Your Laptop Run <span>It?</span>
+        </h1>
+
+        <p>
+            Find out which games are compatible with your laptop.
+        </p>
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search for a game..."
+            >
+
+            <button onclick="searchGames()">
+                Search
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- GAMES SECTION -->
+    <section class="games" id="games">
+
+        <h2>Popular Games</h2>
+
+        <div class="game-container" id="gameContainer">
+
+
+            <!-- GTA V -->
+            <div class="game-card">
+
+                <h3>GTA V</h3>
+
+                <p>
+                    Grand Theft Auto V
+                </p>
+
+                <div class="requirements">
+
+                    <p>
+                        <strong>RAM:</strong> 4 GB
+                    </p>
+
+                    <p>
+                        <strong>Storage:</strong> 72 GB
+                    </p>
+
+                    <p>
+                        <strong>GPU:</strong> GTX 660
+                    </p>
+
+                    <p>
+                        <strong>CPU:</strong> Intel Core 2 Quad
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- HITMAN 2 -->
+            <div class="game-card">
+
+                <h3>Hitman 2</h3>
+
+                <p>
+                    Stealth action game.
+                </p>
+
+                <div class="requirements">
+
+                    <p>
+                        <strong>RAM:</strong> 8 GB
+                    </p>
+
+                    <p>
+                        <strong>Storage:</strong> 60 GB
+                    </p>
+
+                    <p>
+                        <strong>GPU:</strong> GTX 660
+                    </p>
+
+                    <p>
+                        <strong>CPU:</strong> Intel Core i5
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAR CRY 4 -->
+            <div class="game-card">
+
+                <h3>Far Cry 4</h3>
+
+                <p>
+                    Open-world action adventure.
+                </p>
+
+                <div class="requirements">
+
+                    <p>
+                        <strong>RAM:</strong> 4 GB
+                    </p>
+
+                    <p>
+                        <strong>Storage:</strong> 30 GB
+                    </p>
+
+                    <p>
+                        <strong>GPU:</strong> GTX 460
+                    </p>
+
+                    <p>
+                        <strong>CPU:</strong> Intel Core i5
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- WATCH DOGS -->
+            <div class="game-card">
+
+                <h3>Watch Dogs</h3>
+
+                <p>
+                    Open-world hacking action game.
+                </p>
+
+                <div class="requirements">
+
+                    <p>
+                        <strong>RAM:</strong> 6 GB
+                    </p>
+
+                    <p>
+                        <strong>Storage:</strong> 25 GB
+                    </p>
+
+                    <p>
+                        <strong>GPU:</strong> GTX 460
+                    </p>
+
+                    <p>
+                        <strong>CPU:</strong> Intel Core 2 Quad
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="games" id="about">
+
+        <h2>About GameCheck</h2>
+
+        <p style="text-align:center; color:#b8b8c7;">
+
+            GameCheck helps gamers find out whether their
+            laptop or PC can run their favourite games.
+
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 GameCheck. Built for gamers.
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
 
 </body>
 
