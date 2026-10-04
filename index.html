@@ -73,7 +73,30 @@
             id="ram"
             placeholder="Example: 8"
         >
+        
+<label for="cpu">Processor</label>
 
+<select id="cpu">
+
+    <option value="">Select your processor</option>
+
+    <option value="i3">Intel Core i3</option>
+
+    <option value="i5">Intel Core i5</option>
+
+    <option value="i7">Intel Core i7</option>
+
+    <option value="i9">Intel Core i9</option>
+
+    <option value="ryzen3">AMD Ryzen 3</option>
+
+    <option value="ryzen5">AMD Ryzen 5</option>
+
+    <option value="ryzen7">AMD Ryzen 7</option>
+
+    <option value="ryzen9">AMD Ryzen 9</option>
+
+</select>
 
         <label for="gpu">Graphics Card</label>
 
@@ -98,9 +121,16 @@
             <option value="rtx4060">RTX 4060</option>
 
         </select>
+        
+<label for="storage">Free Storage (GB)</label>
 
+<input
+    type="number"
+    id="storage"
+    placeholder="Example: 100"
+>
 
-        <label for="game">Choose a Game</label>
+<label for="game">Choose a Game</label>
 
         <select id="game">
 
