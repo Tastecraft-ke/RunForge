@@ -55,7 +55,7 @@
 
     </section>
 
-<!-- LAPTOP CHECKER -->
+ <!-- LAPTOP CHECKER -->
 <section class="checker" id="checker">
 
     <h2>💻 Can Your Laptop Run It?</h2>
@@ -73,30 +73,26 @@
             id="ram"
             placeholder="Example: 8"
         >
-        
-<label for="cpu">Processor</label>
 
-<select id="cpu">
 
-    <option value="">Select your processor</option>
+        <label for="cpu">Processor</label>
 
-    <option value="i3">Intel Core i3</option>
+        <select id="cpu">
 
-    <option value="i5">Intel Core i5</option>
+            <option value="">Select your processor</option>
 
-    <option value="i7">Intel Core i7</option>
+            <option value="i3">Intel Core i3</option>
+            <option value="i5">Intel Core i5</option>
+            <option value="i7">Intel Core i7</option>
+            <option value="i9">Intel Core i9</option>
 
-    <option value="i9">Intel Core i9</option>
+            <option value="ryzen3">AMD Ryzen 3</option>
+            <option value="ryzen5">AMD Ryzen 5</option>
+            <option value="ryzen7">AMD Ryzen 7</option>
+            <option value="ryzen9">AMD Ryzen 9</option>
 
-    <option value="ryzen3">AMD Ryzen 3</option>
+        </select>
 
-    <option value="ryzen5">AMD Ryzen 5</option>
-
-    <option value="ryzen7">AMD Ryzen 7</option>
-
-    <option value="ryzen9">AMD Ryzen 9</option>
-
-</select>
 
         <label for="gpu">Graphics Card</label>
 
@@ -105,43 +101,35 @@
             <option value="">Select your GPU</option>
 
             <option value="integrated">Integrated Graphics</option>
-
             <option value="gtx750">GTX 750</option>
-
             <option value="gtx1050">GTX 1050</option>
-
             <option value="gtx1650">GTX 1650</option>
-
             <option value="gtx1660">GTX 1660</option>
-
             <option value="rtx2060">RTX 2060</option>
-
             <option value="rtx3060">RTX 3060</option>
-
             <option value="rtx4060">RTX 4060</option>
 
         </select>
-        
-<label for="storage">Free Storage (GB)</label>
 
-<input
-    type="number"
-    id="storage"
-    placeholder="Example: 100"
->
 
-<label for="game">Choose a Game</label>
+        <label for="storage">Free Storage (GB)</label>
+
+        <input
+            type="number"
+            id="storage"
+            placeholder="Example: 100"
+        >
+
+
+        <label for="game">Choose a Game</label>
 
         <select id="game">
 
             <option value="">Select a game</option>
 
             <option value="gta5">GTA V</option>
-
             <option value="hitman2">Hitman 2</option>
-
             <option value="farcry4">Far Cry 4</option>
-
             <option value="watchdogs">Watch Dogs</option>
 
         </select>
@@ -152,7 +140,6 @@
         </button>
 
     </div>
-
 
     <div id="result"></div>
 
