@@ -274,3 +274,72 @@ footer {
     color: var(--text-gray);
     margin-top: 50px;
 }
+
+/* ==========================================
+   COMPATIBILITY RESULTS
+   ========================================== */
+
+.compatibility-result {
+    background: var(--bg-card);
+    border: 1px solid var(--purple);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(138, 43, 226, 0.2);
+}
+
+.compatibility-result h3 {
+    font-size: 26px;
+    color: var(--purple-light);
+    margin-bottom: 20px;
+}
+
+.result-status {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background: var(--purple);
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.compatibility-result p {
+    color: var(--text-gray);
+    margin: 12px 0;
+    line-height: 1.6;
+}
+
+.compatibility-result strong {
+    color: white;
+}
+
+.requirements-check {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    text-align: left;
+}
+
+.requirements-check p {
+    margin: 10px 0;
+}
+
+.storage-message {
+    margin-top: 20px;
+    padding: 15px;
+    background: #0b0b12;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text-gray);
+    line-height: 1.5;
+}
+
+.result-warning {
+    padding: 20px;
+    background: #241b0d;
+    border: 1px solid #76551d;
+    border-radius: 10px;
+    color: #ffd66b;
+    text-align: center;
+}
