@@ -51,7 +51,7 @@ function checkGame() {
     let result = document.getElementById("result");
 
 
-    /* CHECK FOR EMPTY INFORMATION */
+    /* CHECK FOR MISSING INFORMATION */
 
     if (
         ram === 0 ||
@@ -61,14 +61,19 @@ function checkGame() {
         game === ""
     ) {
 
-        result.innerHTML =
-            "⚠️ Please enter all your laptop information.";
+        result.innerHTML = `
+            ⚠️ <strong>Missing information</strong>
+            <br><br>
+            Please enter all your laptop specifications.
+        `;
 
         return;
     }
 
 
-    /* CPU POWER */
+    /* =========================
+       CPU POWER
+       ========================= */
 
     let cpuPower = {
 
@@ -85,7 +90,9 @@ function checkGame() {
     };
 
 
-    /* GPU POWER */
+    /* =========================
+       GPU POWER
+       ========================= */
 
     let gpuPower = {
 
@@ -108,7 +115,9 @@ function checkGame() {
     };
 
 
-    /* GAME REQUIREMENTS */
+    /* =========================
+       GAME REQUIREMENTS
+       ========================= */
 
     let requirements = {
 
@@ -117,7 +126,8 @@ function checkGame() {
             ram: 4,
             storage: 72,
             cpu: 2,
-            gpu: 2
+            gpu: 2,
+            fps: 60
         },
 
         hitman2: {
@@ -125,7 +135,8 @@ function checkGame() {
             ram: 8,
             storage: 60,
             cpu: 4,
-            gpu: 3
+            gpu: 3,
+            fps: 45
         },
 
         farcry4: {
@@ -133,7 +144,8 @@ function checkGame() {
             ram: 4,
             storage: 30,
             cpu: 2,
-            gpu: 2
+            gpu: 2,
+            fps: 60
         },
 
         watchdogs: {
@@ -141,7 +153,8 @@ function checkGame() {
             ram: 6,
             storage: 25,
             cpu: 3,
-            gpu: 2
+            gpu: 2,
+            fps: 50
         }
 
     };
@@ -154,40 +167,150 @@ function checkGame() {
     let userGpuPower = gpuPower[gpu];
 
 
-    /* CHECK COMPATIBILITY */
+    /* =========================
+       CHECK EACH COMPONENT
+       ========================= */
 
-    let ramOkay = ram >= selectedGame.ram;
+    let ramOkay =
+        ram >= selectedGame.ram;
 
-    let storageOkay = storage >= selectedGame.storage;
+    let storageOkay =
+        storage >= selectedGame.storage;
 
-    let cpuOkay = userCpuPower >= selectedGame.cpu;
+    let cpuOkay =
+        userCpuPower >= selectedGame.cpu;
 
-    let gpuOkay = userGpuPower >= selectedGame.gpu;
+    let gpuOkay =
+        userGpuPower >= selectedGame.gpu;
 
 
-    if (
-        ramOkay &&
-        storageOkay &&
-        cpuOkay &&
-        gpuOkay
-    ) {
+    /* =========================
+       CALCULATE PERFORMANCE
+       ========================= */
+
+    let performanceScore = 0;
+
+    if (ramOkay) {
+        performanceScore++;
+    }
+
+    if (storageOkay) {
+        performanceScore++;
+    }
+
+    if (cpuOkay) {
+        performanceScore++;
+    }
+
+    if (gpuOkay) {
+        performanceScore++;
+    }
+
+
+    /* =========================
+       EXCELLENT
+       ========================= */
+
+    if (performanceScore === 4) {
+
+        let estimatedFPS =
+            selectedGame.fps;
 
         result.innerHTML = `
-            🟢 <strong>YES!</strong>
+            🟢 <strong>EXCELLENT</strong>
+
             <br><br>
 
-            Your laptop should be able to run
+            Your laptop should run
+            <strong>${selectedGame.name}</strong>
+            very well.
+
+            <br><br>
+
+            🎮 Estimated FPS:
+            <strong>${estimatedFPS} FPS</strong>
+
+            <br>
+
+            ⚙️ Recommended settings:
+            <strong>High</strong>
+        `;
+
+    }
+
+
+    /* =========================
+       PLAYABLE
+       ========================= */
+
+    else if (performanceScore === 3) {
+
+        let estimatedFPS =
+            Math.round(selectedGame.fps * 0.75);
+
+        result.innerHTML = `
+            🟢 <strong>GOOD</strong>
+
+            <br><br>
+
+            Your laptop should run
             <strong>${selectedGame.name}</strong>.
 
             <br><br>
 
-            💻 Compatibility: <strong>Good</strong>
+            🎮 Estimated FPS:
+            <strong>${estimatedFPS} FPS</strong>
+
+            <br>
+
+            ⚙️ Recommended settings:
+            <strong>Medium</strong>
         `;
 
-    } else {
+    }
+
+
+    /* =========================
+       LOW
+       ========================= */
+
+    else if (performanceScore === 2) {
+
+        let estimatedFPS =
+            Math.round(selectedGame.fps * 0.50);
+
+        result.innerHTML = `
+            🟡 <strong>PLAYABLE</strong>
+
+            <br><br>
+
+            Your laptop may run
+            <strong>${selectedGame.name}</strong>,
+            but performance may be limited.
+
+            <br><br>
+
+            🎮 Estimated FPS:
+            <strong>${estimatedFPS} FPS</strong>
+
+            <br>
+
+            ⚙️ Recommended settings:
+            <strong>Low</strong>
+        `;
+
+    }
+
+
+    /* =========================
+       NOT RECOMMENDED
+       ========================= */
+
+    else {
 
         result.innerHTML = `
             🔴 <strong>NOT RECOMMENDED</strong>
+
             <br><br>
 
             Your laptop may struggle to run
@@ -195,8 +318,8 @@ function checkGame() {
 
             <br><br>
 
-            Try lowering the game's graphics
-            settings or upgrading your hardware.
+            💡 Consider upgrading your
+            RAM or graphics card.
         `;
 
     }
