@@ -18,6 +18,61 @@
     margin-bottom: 35px;
 }
 
+/* ================================
+   GAME DOWNLOAD SECTION
+   ================================ */
+
+.download-section {
+    padding: 70px 20px;
+    background: #0b0b12;
+    text-align: center;
+}
+
+.download-box {
+    max-width: 750px;
+    margin: auto;
+    padding: 40px;
+    background: #151522;
+    border: 1px solid #302f46;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(138, 43, 226, 0.15);
+}
+
+.download-box h2 {
+    font-size: 32px;
+    color: #b45cff;
+    margin-bottom: 20px;
+}
+
+.download-box p {
+    color: #b8b8c7;
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.download-link {
+    display: inline-block;
+    margin: 15px 0 25px;
+    padding: 15px 25px;
+    background: #8a2be2;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.download-link:hover {
+    background: #b45cff;
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(180, 92, 255, 0.5);
+}
+
+.download-disclaimer {
+    font-size: 13px !important;
+    color: #777 !important;
+}
+
 .checker-box {
     max-width: 500px;
     margin: auto;
