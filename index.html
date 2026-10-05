@@ -2,17 +2,31 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>GameCheck - Laptop Game Compatibility</title>
+    <meta
+        name="description"
+        content="GameCheck - Check whether your laptop can run your favorite PC games."
+    >
 
+    <title>GameCheck - Can Your Laptop Run It?</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-    <!-- HEADER -->
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
     <header>
 
         <div class="logo">
@@ -20,24 +34,39 @@
         </div>
 
         <nav>
+
             <a href="#home">Home</a>
+
+            <a href="#checker">Laptop Checker</a>
+
             <a href="#games">Games</a>
+
             <a href="#about">About</a>
+
         </nav>
 
     </header>
 
 
-    <!-- HERO SECTION -->
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
     <section class="hero" id="home">
 
         <h1>
-            Can Your Laptop Run <span>It?</span>
+            Can Your Laptop
+            <span>Run It?</span>
         </h1>
 
         <p>
-            Find out which games are compatible with your laptop.
+            Find out which games your laptop can handle
+            before you download or install them.
         </p>
+
+
+        <!-- SEARCH -->
 
         <div class="search-box">
 
@@ -48,405 +77,424 @@
             >
 
             <button onclick="searchGames()">
-                Search
+                🔍 Search
             </button>
 
         </div>
 
     </section>
 
-<!-- LAPTOP CHECKER -->
-
-<section class="checker" id="checker">
-
-    <h2>💻 Can Your Laptop Run It?</h2>
-
-    <p class="checker-description">
-        Enter your laptop specifications and find out which games you can play.
-    </p>
-
-    <div class="checker-box">
-
-        <!-- RAM -->
-        <label for="ram">RAM (GB)</label>
-
-        <input
-            type="number"
-            id="ram"
-            placeholder="Example: 8"
-            min="1"
-        >
 
 
-        <!-- PROCESSOR -->
-        <label for="cpu">Processor</label>
+    <!-- =========================
+         LAPTOP COMPATIBILITY CHECKER
+    ========================== -->
 
-        <select id="cpu">
+    <section class="checker" id="checker">
 
-            <option value="">Select your processor</option>
+        <h2>
+            💻 Can Your Laptop Run It?
+        </h2>
 
-            <option value="i3">Intel Core i3</option>
-            <option value="i5">Intel Core i5</option>
-            <option value="i7">Intel Core i7</option>
-            <option value="i9">Intel Core i9</option>
+        <p class="checker-description">
 
-            <option value="ryzen3">AMD Ryzen 3</option>
-            <option value="ryzen5">AMD Ryzen 5</option>
-            <option value="ryzen7">AMD Ryzen 7</option>
-            <option value="ryzen9">AMD Ryzen 9</option>
+            Enter your laptop specifications
+            and choose a game to check compatibility.
 
-        </select>
+        </p>
 
 
-        <!-- GRAPHICS -->
-        <label for="gpu">Graphics</label>
+        <div class="checker-box">
 
-        <select id="gpu">
 
-            <option value="">Select your graphics</option>
+            <!-- RAM -->
 
-            <optgroup label="Integrated Graphics">
+            <label for="ram">
+                RAM (GB)
+            </label>
 
-                <option value="hd4000">
-                    Intel HD Graphics 4000
+            <input
+                type="number"
+                id="ram"
+                placeholder="Example: 8"
+                min="1"
+            >
+
+
+
+            <!-- PROCESSOR -->
+
+            <label for="cpu">
+                Processor
+            </label>
+
+            <select id="cpu">
+
+                <option value="">
+                    Select your processor
                 </option>
 
-                <option value="hd4400">
-                    Intel HD Graphics 4400
+                <option value="i3">
+                    Intel Core i3
                 </option>
 
-                <option value="hd520">
-                    Intel HD Graphics 520
+                <option value="i5">
+                    Intel Core i5
                 </option>
 
-                <option value="uhd620">
-                    Intel UHD Graphics 620
+                <option value="i7">
+                    Intel Core i7
                 </option>
 
-                <option value="uhd630">
-                    Intel UHD Graphics 630
+                <option value="i9">
+                    Intel Core i9
                 </option>
 
-                <option value="irisxe">
-                    Intel Iris Xe
+                <option value="ryzen3">
+                    AMD Ryzen 3
                 </option>
 
-                <option value="vega3">
-                    AMD Radeon Vega 3
+                <option value="ryzen5">
+                    AMD Ryzen 5
                 </option>
 
-                <option value="vega8">
-                    AMD Radeon Vega 8
+                <option value="ryzen7">
+                    AMD Ryzen 7
                 </option>
 
-            </optgroup>
-
-
-            <optgroup label="Dedicated Graphics">
-
-                <option value="gtx750">
-                    NVIDIA GTX 750
+                <option value="ryzen9">
+                    AMD Ryzen 9
                 </option>
 
-                <option value="gtx1050">
-                    NVIDIA GTX 1050
+            </select>
+
+
+
+            <!-- GRAPHICS -->
+
+            <label for="gpu">
+                Graphics
+            </label>
+
+            <select id="gpu">
+
+                <option value="">
+                    Select your graphics
                 </option>
 
-                <option value="gtx1650">
-                    NVIDIA GTX 1650
+
+                <!-- INTEGRATED GRAPHICS -->
+
+                <optgroup label="Integrated Graphics">
+
+                    <option value="hd4000">
+                        Intel HD Graphics 4000
+                    </option>
+
+                    <option value="hd4400">
+                        Intel HD Graphics 4400
+                    </option>
+
+                    <option value="hd520">
+                        Intel HD Graphics 520
+                    </option>
+
+                    <option value="uhd620">
+                        Intel UHD Graphics 620
+                    </option>
+
+                    <option value="uhd630">
+                        Intel UHD Graphics 630
+                    </option>
+
+                    <option value="irisxe">
+                        Intel Iris Xe
+                    </option>
+
+                    <option value="vega3">
+                        AMD Radeon Vega 3
+                    </option>
+
+                    <option value="vega8">
+                        AMD Radeon Vega 8
+                    </option>
+
+                </optgroup>
+
+
+
+                <!-- DEDICATED GRAPHICS -->
+
+                <optgroup label="Dedicated Graphics">
+
+                    <option value="gtx750">
+                        NVIDIA GTX 750
+                    </option>
+
+                    <option value="gtx1050">
+                        NVIDIA GTX 1050
+                    </option>
+
+                    <option value="gtx1650">
+                        NVIDIA GTX 1650
+                    </option>
+
+                    <option value="gtx1660">
+                        NVIDIA GTX 1660
+                    </option>
+
+                    <option value="rtx2060">
+                        NVIDIA RTX 2060
+                    </option>
+
+                    <option value="rtx3060">
+                        NVIDIA RTX 3060
+                    </option>
+
+                    <option value="rtx4060">
+                        NVIDIA RTX 4060
+                    </option>
+
+                </optgroup>
+
+            </select>
+
+
+
+            <!-- STORAGE TYPE -->
+
+            <label for="storageType">
+                Storage Type
+            </label>
+
+            <select id="storageType">
+
+                <option value="">
+                    Select storage type
                 </option>
 
-                <option value="gtx1660">
-                    NVIDIA GTX 1660
+                <option value="ssd">
+                    SSD
                 </option>
 
-                <option value="rtx2060">
-                    NVIDIA RTX 2060
+                <option value="hdd">
+                    HDD
                 </option>
 
-                <option value="rtx3060">
-                    NVIDIA RTX 3060
+            </select>
+
+
+
+            <!-- FREE STORAGE -->
+
+            <label for="storage">
+                Free Storage (GB)
+            </label>
+
+            <input
+                type="number"
+                id="storage"
+                placeholder="Example: 100"
+                min="1"
+            >
+
+
+
+            <!-- GAME -->
+
+            <label for="game">
+                Choose a Game
+            </label>
+
+            <select id="game">
+
+                <option value="">
+                    Select a game
                 </option>
 
-                <option value="rtx4060">
-                    NVIDIA RTX 4060
+                <option value="gta5">
+                    GTA V
                 </option>
 
-            </optgroup>
+                <option value="hitman2">
+                    Hitman 2
+                </option>
 
-        </select>
+                <option value="farcry4">
+                    Far Cry 4
+                </option>
 
+                <option value="watchdogs">
+                    Watch Dogs
+                </option>
 
-        <!-- STORAGE TYPE -->
-        <label for="storageType">Storage Type</label>
+                <option value="gta4">
+                    GTA IV
+                </option>
 
-        <select id="storageType">
+                <option value="farcry3">
+                    Far Cry 3
+                </option>
 
-            <option value="">
-                Select storage type
-            </option>
+                <option value="farcry5">
+                    Far Cry 5
+                </option>
 
-            <option value="ssd">
-                SSD
-            </option>
+                <option value="watchdogs2">
+                    Watch Dogs 2
+                </option>
 
-            <option value="hdd">
-                HDD
-            </option>
+                <option value="mgsv">
+                    Metal Gear Solid V
+                </option>
 
-        </select>
+                <option value="sleepingdogs">
+                    Sleeping Dogs
+                </option>
 
+                <option value="rdr2">
+                    Red Dead Redemption 2
+                </option>
 
-        <!-- STORAGE CAPACITY -->
-        <label for="storage">Free Storage (GB)</label>
+                <option value="hitman3">
+                    Hitman 3
+                </option>
 
-        <input
-            type="number"
-            id="storage"
-            placeholder="Example: 100"
-            min="1"
-        >
-
-
-        <!-- GAME -->
-        <label for="game">Choose a Game</label>
-
-        <select id="game">
-
-            <option value="">
-                Select a game
-            </option>
-
-            <option value="gta5">
-                GTA V
-            </option>
-
-            <option value="hitman2">
-                Hitman 2
-            </option>
-
-            <option value="farcry4">
-                Far Cry 4
-            </option>
-
-            <option value="watchdogs">
-                Watch Dogs
-            </option>
-
-            <option value="gta4">
-                GTA IV
-            </option>
-
-            <option value="farcry3">
-                Far Cry 3
-            </option>
-
-            <option value="farcry5">
-                Far Cry 5
-            </option>
-
-            <option value="watchdogs2">
-                Watch Dogs 2
-            </option>
-
-            <option value="mgsv">
-                Metal Gear Solid V
-            </option>
-
-            <option value="sleepingdogs">
-                Sleeping Dogs
-            </option>
-
-            <option value="rdr2">
-                Red Dead Redemption 2
-            </option>
-
-            <option value="hitman3">
-                Hitman 3
-            </option>
-
-        </select>
+            </select>
 
 
-        <!-- CHECK BUTTON -->
-        <button onclick="checkGame()">
-            🔍 Check Compatibility
-        </button>
 
-    </div>
+            <!-- CHECK BUTTON -->
 
+            <button onclick="checkGame()">
 
-    <!-- RESULT -->
-    <div id="result"></div>
+                🔍 Check Compatibility
 
-</section>
+            </button>
 
-<label for="gpu">Graphics Card</label>
-
-<select id="gpu">
-
-    <option value="">Select your GPU</option>
-
-    <option value="integrated">Integrated Graphics</option>
-
-    <option value="gtx750">GTX 750</option>
-    <option value="gtx1050">GTX 1050</option>
-    <option value="gtx1650">GTX 1650</option>
-    <option value="gtx1660">GTX 1660</option>
-
-    <option value="rtx2060">RTX 2060</option>
-    <option value="rtx3060">RTX 3060</option>
-    <option value="rtx4060">RTX 4060</option>
-
-</select>
-
-<label for="storageType">Storage Type</label>
-
-<select id="storageType">
-
-    <option value="">Select storage type</option>
-
-    <option value="ssd">SSD</option>
-    <option value="hdd">HDD</option>
-
-</select>
+        </div>
 
 
-<label for="storage">Storage Capacity (GB)</label>
 
-<input
-    type="number"
-    id="storage"
-    placeholder="Example: 500"
->
+        <!-- RESULT -->
 
-<label for="game">Choose a Game</label>
+        <div id="result"></div>
 
-        <select id="game">
-
-            <option value="">Select a game</option>
-
-            <option value="gta5">GTA V</option>
-            <option value="hitman2">Hitman 2</option>
-            <option value="farcry4">Far Cry 4</option>
-            <option value="watchdogs">Watch Dogs</option>
-
-        </select>
+    </section>
 
 
-        <button onclick="checkGame()">
-            🔍 Check Compatibility
-        </button>
 
-    </div>
+    <!-- =========================
+         GAMES SECTION
+    ========================== -->
 
-    <div id="result"></div>
-
-</section>
-    
-    <!-- GAMES SECTION -->
     <section class="games" id="games">
 
-        <h2>Popular Games</h2>
+        <h2>
+            🎮 Games
+        </h2>
 
-        <div class="game-container" id="gameContainer">
+
+        <div class="game-container">
 
 
             <!-- GTA V -->
+
             <div class="game-card">
 
-                <img src="images/gta5.jpg" alt="GTA V">
-                
-                <h3>GTA V</h3>
+                <img
+                    src="images/gta5.jpg"
+                    alt="GTA V"
+                >
+
+                <h3>
+                    GTA V
+                </h3>
 
                 <p>
-                    Grand Theft Auto V
+                    Open-world action game.
                 </p>
 
                 <div class="requirements">
 
                     <p>
-                        <strong>RAM:</strong> 4 GB
+                        <strong>RAM:</strong>
+                        4 GB minimum
                     </p>
 
                     <p>
-                        <strong>Storage:</strong> 72 GB
-                    </p>
-
-                    <p>
-                        <strong>GPU:</strong> GTX 660
-                    </p>
-
-                    <p>
-                        <strong>CPU:</strong> Intel Core 2 Quad
+                        <strong>Storage:</strong>
+                        72 GB
                     </p>
 
                 </div>
 
             </div>
+
 
 
             <!-- HITMAN 2 -->
+
             <div class="game-card">
-                
-                <img src="images/hitman2.jpg" alt="Hitman 2">
-                
-                <h3>Hitman 2</h3>
+
+                <img
+                    src="images/hitman2.jpg"
+                    alt="Hitman 2"
+                >
+
+                <h3>
+                    Hitman 2
+                </h3>
 
                 <p>
-                    Stealth action game.
+                    Stealth and assassination game.
                 </p>
 
                 <div class="requirements">
 
                     <p>
-                        <strong>RAM:</strong> 8 GB
+                        <strong>RAM:</strong>
+                        8 GB minimum
                     </p>
 
                     <p>
-                        <strong>Storage:</strong> 60 GB
-                    </p>
-
-                    <p>
-                        <strong>GPU:</strong> GTX 660
-                    </p>
-
-                    <p>
-                        <strong>CPU:</strong> Intel Core i5
+                        <strong>Storage:</strong>
+                        60 GB
                     </p>
 
                 </div>
 
             </div>
+
 
 
             <!-- FAR CRY 4 -->
+
             <div class="game-card">
 
-                <img src="images/farcry4.jpg" alt="Far Cry 4">
-                
-                <h3>Far Cry 4</h3>
+                <img
+                    src="images/farcry4.jpg"
+                    alt="Far Cry 4"
+                >
+
+                <h3>
+                    Far Cry 4
+                </h3>
 
                 <p>
-                    Open-world action adventure.
+                    Open-world first-person shooter.
                 </p>
 
                 <div class="requirements">
 
                     <p>
-                        <strong>RAM:</strong> 4 GB
+                        <strong>RAM:</strong>
+                        4 GB minimum
                     </p>
 
                     <p>
-                        <strong>Storage:</strong> 30 GB
-                    </p>
-
-                    <p>
-                        <strong>GPU:</strong> GTX 460
-                    </p>
-
-                    <p>
-                        <strong>CPU:</strong> Intel Core i5
+                        <strong>Storage:</strong>
+                        30 GB
                     </p>
 
                 </div>
@@ -454,33 +502,34 @@
             </div>
 
 
+
             <!-- WATCH DOGS -->
+
             <div class="game-card">
-                
-                <img src="images/watchdogs.jpg" alt="Watch Dogs">
-                
-                <h3>Watch Dogs</h3>
+
+                <img
+                    src="images/watchdogs.jpg"
+                    alt="Watch Dogs"
+                >
+
+                <h3>
+                    Watch Dogs
+                </h3>
 
                 <p>
-                    Open-world hacking action game.
+                    Open-world action and hacking game.
                 </p>
 
                 <div class="requirements">
 
                     <p>
-                        <strong>RAM:</strong> 6 GB
+                        <strong>RAM:</strong>
+                        6 GB minimum
                     </p>
 
                     <p>
-                        <strong>Storage:</strong> 25 GB
-                    </p>
-
-                    <p>
-                        <strong>GPU:</strong> GTX 460
-                    </p>
-
-                    <p>
-                        <strong>CPU:</strong> Intel Core 2 Quad
+                        <strong>Storage:</strong>
+                        25 GB
                     </p>
 
                 </div>
@@ -493,64 +542,108 @@
     </section>
 
 
-    <!-- ABOUT -->
-    <section class="games" id="about">
 
-        <h2>About GameCheck</h2>
+    <!-- =========================
+         ABOUT SECTION
+    ========================== -->
 
-        <p style="text-align:center; color:#b8b8c7;">
+    <section class="about" id="about">
 
-            GameCheck helps gamers find out whether their
-            laptop or PC can run their favourite games.
+        <h2>
+            ℹ️ About GameCheck
+        </h2>
+
+        <p>
+
+            GameCheck helps PC gamers find out
+            whether their laptop can run a particular game.
+
+        </p>
+
+        <p>
+
+            Enter your RAM, processor, graphics,
+            storage type and available storage
+            to receive a compatibility estimate.
+
+        </p>
+
+        <p>
+
+            Our goal is to make PC gaming requirements
+            easier to understand.
 
         </p>
 
     </section>
 
-<!-- GAME DOWNLOAD ACCESS -->
-<section class="download-section">
 
-    <div class="download-box">
 
-        <h2>🎮 Get Your Games</h2>
+    <!-- =========================
+         GAME DOWNLOAD SECTION
+    ========================== -->
 
-        <p>
-            Want to get access to the games listed on GameCheck?
-        </p>
+    <section class="download-section">
 
-        <p>
-            Visit the site below:
-        </p>
+        <div class="download-box">
 
-        <a
-            href="https://fitgirl-repacks.site"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="download-link"
-        >
-            https://fitgirl-repacks.site
-        </a>
+            <h2>
+                🎮 Get Your Games
+            </h2>
 
-        <p class="download-disclaimer">
-            GameCheck is not affiliated with this third-party website.
-        </p>
+            <p>
+                Looking for the games listed on GameCheck?
+            </p>
 
-    </div>
+            <p>
+                Visit the external website below:
+            </p>
 
-</section>
-    
-<!-- FOOTER -->
+            <a
+                href="https://fitgirl-repacks.site"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="download-link"
+            >
+                Visit External Website
+            </a>
+
+            <p class="download-disclaimer">
+
+                GameCheck is not affiliated with
+                this third-party website.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
     <footer>
 
         <p>
-            © 2026 GameCheck. Built for gamers.
+            © 2026 GameCheck. All rights reserved.
+        </p>
+
+        <p>
+            Game compatibility information
+            is provided as an estimate.
         </p>
 
     </footer>
 
 
+
     <!-- JAVASCRIPT -->
+
     <script src="script.js"></script>
+
 
 </body>
 
