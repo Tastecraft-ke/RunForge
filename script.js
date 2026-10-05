@@ -1,82 +1,259 @@
-function searchGames() {
+// ===============================
+// GAMECHECK GAME DATABASE
+// ===============================
 
-    let input = document
-        .getElementById("searchInput")
-        .value
-        .toLowerCase();
+const games = [
 
-    let games = document
-        .getElementsByClassName("game-card");
+    {
+        id: "gta5",
+        name: "GTA V",
+        category: "Open World",
+        image: "images/gta5.jpg",
+        release: "2015",
+        storage: 72,
+        minimum: {
+            ram: 4,
+            cpu: 2,
+            gpu: 2
+        },
+        recommended: {
+            ram: 8,
+            cpu: 4,
+            gpu: 4
+        },
+        baseFPS: 60
+    },
 
-    for (let i = 0; i < games.length; i++) {
+    {
+        id: "hitman2",
+        name: "Hitman 2",
+        category: "Stealth",
+        image: "images/hitman2.jpg",
+        release: "2018",
+        storage: 60,
+        minimum: {
+            ram: 8,
+            cpu: 4,
+            gpu: 3
+        },
+        recommended: {
+            ram: 16,
+            cpu: 6,
+            gpu: 5
+        },
+        baseFPS: 45
+    },
 
-        let gameName = games[i]
-            .getElementsByTagName("h3")[0]
-            .innerText
-            .toLowerCase();
+    {
+        id: "farcry4",
+        name: "Far Cry 4",
+        category: "FPS",
+        image: "images/farcry4.jpg",
+        release: "2014",
+        storage: 30,
+        minimum: {
+            ram: 4,
+            cpu: 2,
+            gpu: 2
+        },
+        recommended: {
+            ram: 8,
+            cpu: 4,
+            gpu: 4
+        },
+        baseFPS: 60
+    },
 
-        if (gameName.includes(input)) {
+    {
+        id: "watchdogs",
+        name: "Watch Dogs",
+        category: "Open World",
+        image: "images/watchdogs.jpg",
+        release: "2014",
+        storage: 25,
+        minimum: {
+            ram: 6,
+            cpu: 3,
+            gpu: 2
+        },
+        recommended: {
+            ram: 8,
+            cpu: 4,
+            gpu: 4
+        },
+        baseFPS: 50
+    },
 
-            games[i].style.display = "block";
+    {
+        id: "gta4",
+        name: "GTA IV",
+        category: "Open World",
+        image: "images/gta4.jpg",
+        release: "2008",
+        storage: 22,
+        minimum: {
+            ram: 2,
+            cpu: 2,
+            gpu: 1
+        },
+        recommended: {
+            ram: 4,
+            cpu: 4,
+            gpu: 2
+        },
+        baseFPS: 60
+    },
 
-        } else {
+    {
+        id: "farcry3",
+        name: "Far Cry 3",
+        category: "FPS",
+        image: "images/farcry3.jpg",
+        release: "2012",
+        storage: 15,
+        minimum: {
+            ram: 2,
+            cpu: 2,
+            gpu: 1
+        },
+        recommended: {
+            ram: 4,
+            cpu: 3,
+            gpu: 2
+        },
+        baseFPS: 60
+    },
 
-            games[i].style.display = "none";
+    {
+        id: "farcry5",
+        name: "Far Cry 5",
+        category: "FPS",
+        image: "images/farcry5.jpg",
+        release: "2018",
+        storage: 40,
+        minimum: {
+            ram: 8,
+            cpu: 4,
+            gpu: 3
+        },
+        recommended: {
+            ram: 16,
+            cpu: 6,
+            gpu: 5
+        },
+        baseFPS: 60
+    },
 
-        }
+    {
+        id: "watchdogs2",
+        name: "Watch Dogs 2",
+        category: "Open World",
+        image: "images/watchdogs2.jpg",
+        release: "2016",
+        storage: 27,
+        minimum: {
+            ram: 6,
+            cpu: 4,
+            gpu: 3
+        },
+        recommended: {
+            ram: 8,
+            cpu: 6,
+            gpu: 5
+        },
+        baseFPS: 60
+    },
+
+    {
+        id: "mgsv",
+        name: "Metal Gear Solid V",
+        category: "Stealth",
+        image: "images/mgsv.jpg",
+        release: "2015",
+        storage: 28,
+        minimum: {
+            ram: 4,
+            cpu: 3,
+            gpu: 2
+        },
+        recommended: {
+            ram: 8,
+            cpu: 4,
+            gpu: 4
+        },
+        baseFPS: 60
+    },
+
+    {
+        id: "sleepingdogs",
+        name: "Sleeping Dogs",
+        category: "Open World",
+        image: "images/sleepingdogs.jpg",
+        release: "2012",
+        storage: 15,
+        minimum: {
+            ram: 2,
+            cpu: 2,
+            gpu: 1
+        },
+        recommended: {
+            ram: 4,
+            cpu: 3,
+            gpu: 2
+        },
+        baseFPS: 60
+    },
+
+    {
+        id: "rdr2",
+        name: "Red Dead Redemption 2",
+        category: "Open World",
+        image: "images/rdr2.jpg",
+        release: "2019",
+        storage: 150,
+        minimum: {
+            ram: 8,
+            cpu: 5,
+            gpu: 4
+        },
+        recommended: {
+            ram: 12,
+            cpu: 7,
+            gpu: 6
+        },
+        baseFPS: 45
+    },
+
+    {
+        id: "hitman3",
+        name: "Hitman 3",
+        category: "Stealth",
+        image: "images/hitman3.jpg",
+        release: "2021",
+        storage: 80,
+        minimum: {
+            ram: 8,
+            cpu: 5,
+            gpu: 4
+        },
+        recommended: {
+            ram: 16,
+            cpu: 7,
+            gpu: 6
+        },
+        baseFPS: 45
     }
-}
+
+];
 
 
-/* =========================
-   LAPTOP COMPATIBILITY CHECKER
-   ========================= */
+// ===============================
+// CPU POWER
+// ===============================
 
-function checkGame() {
+function getCPUScore(cpu) {
 
-    let ram = Number(
-        document.getElementById("ram").value
-    );
-
-    let storage = Number(
-        document.getElementById("storage").value
-    );
-
-    let cpu = document.getElementById("cpu").value;
-
-    let gpu = document.getElementById("gpu").value;
-
-    let game = document.getElementById("game").value;
-
-    let result = document.getElementById("result");
-
-
-    /* CHECK FOR MISSING INFORMATION */
-
-    if (
-        ram === 0 ||
-        storage === 0 ||
-        cpu === "" ||
-        gpu === "" ||
-        game === ""
-    ) {
-
-        result.innerHTML = `
-            ⚠️ <strong>Missing information</strong>
-            <br><br>
-            Please enter all your laptop specifications.
-        `;
-
-        return;
-    }
-
-
-    /* =========================
-       CPU POWER
-       ========================= */
-
-    let cpuPower = {
-
+    const cpuScores = {
         i3: 2,
         i5: 4,
         i7: 6,
@@ -86,242 +263,256 @@ function checkGame() {
         ryzen5: 4,
         ryzen7: 6,
         ryzen9: 8
-
     };
 
+    return cpuScores[cpu] || 0;
+}
 
-    /* =========================
-       GPU POWER
-       ========================= */
 
-    let gpuPower = {
+// ===============================
+// GPU POWER
+// ===============================
 
+function getGPUScore(gpu) {
+
+    const gpuScores = {
         integrated: 1,
-
         gtx750: 2,
-
         gtx1050: 3,
-
         gtx1650: 4,
-
         gtx1660: 5,
-
         rtx2060: 6,
-
         rtx3060: 7,
-
         rtx4060: 8
-
     };
 
+    return gpuScores[gpu] || 0;
+}
 
-    /* =========================
-       GAME REQUIREMENTS
-       ========================= */
 
-    let requirements = {
+// ===============================
+// SEARCH GAMES
+// ===============================
 
-        gta5: {
-            name: "GTA V",
-            ram: 4,
-            storage: 72,
-            cpu: 2,
-            gpu: 2,
-            fps: 60
-        },
+function searchGames() {
 
-        hitman2: {
-            name: "Hitman 2",
-            ram: 8,
-            storage: 60,
-            cpu: 4,
-            gpu: 3,
-            fps: 45
-        },
+    const searchInput = document.getElementById("searchInput");
 
-        farcry4: {
-            name: "Far Cry 4",
-            ram: 4,
-            storage: 30,
-            cpu: 2,
-            gpu: 2,
-            fps: 60
-        },
+    if (!searchInput) {
+        return;
+    }
 
-        watchdogs: {
-            name: "Watch Dogs",
-            ram: 6,
-            storage: 25,
-            cpu: 3,
-            gpu: 2,
-            fps: 50
+    const searchText = searchInput.value.toLowerCase().trim();
+
+    const cards = document.querySelectorAll(".game-card");
+
+    cards.forEach(card => {
+
+        const gameName =
+            card.querySelector("h3").textContent.toLowerCase();
+
+        if (gameName.includes(searchText)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
         }
 
-    };
+    });
+
+}
 
 
-    let selectedGame = requirements[game];
+// ===============================
+// COMPATIBILITY CHECKER
+// ===============================
 
-    let userCpuPower = cpuPower[cpu];
+function checkGame() {
 
-    let userGpuPower = gpuPower[gpu];
+    const ram = Number(document.getElementById("ram").value);
 
+    const cpu = document.getElementById("cpu").value;
 
-    /* =========================
-       CHECK EACH COMPONENT
-       ========================= */
+    const gpu = document.getElementById("gpu").value;
 
-    let ramOkay =
-        ram >= selectedGame.ram;
+    const storage =
+        Number(document.getElementById("storage").value);
 
-    let storageOkay =
-        storage >= selectedGame.storage;
+    const gameID =
+        document.getElementById("game").value;
 
-    let cpuOkay =
-        userCpuPower >= selectedGame.cpu;
-
-    let gpuOkay =
-        userGpuPower >= selectedGame.gpu;
+    const result =
+        document.getElementById("result");
 
 
-    /* =========================
-       CALCULATE PERFORMANCE
-       ========================= */
+    // Check if fields are empty
 
-    let performanceScore = 0;
-
-    if (ramOkay) {
-        performanceScore++;
-    }
-
-    if (storageOkay) {
-        performanceScore++;
-    }
-
-    if (cpuOkay) {
-        performanceScore++;
-    }
-
-    if (gpuOkay) {
-        performanceScore++;
-    }
-
-
-    /* =========================
-       EXCELLENT
-       ========================= */
-
-    if (performanceScore === 4) {
-
-        let estimatedFPS =
-            selectedGame.fps;
+    if (!ram || !cpu || !gpu || !storage || !gameID) {
 
         result.innerHTML = `
-            🟢 <strong>EXCELLENT</strong>
-
-            <br><br>
-
-            Your laptop should run
-            <strong>${selectedGame.name}</strong>
-            very well.
-
-            <br><br>
-
-            🎮 Estimated FPS:
-            <strong>${estimatedFPS} FPS</strong>
-
-            <br>
-
-            ⚙️ Recommended settings:
-            <strong>High</strong>
+            <div class="result-warning">
+                ⚠️ Please fill in all fields before checking.
+            </div>
         `;
 
+        return;
     }
 
 
-    /* =========================
-       PLAYABLE
-       ========================= */
+    // Find selected game
 
-    else if (performanceScore === 3) {
+    const game =
+        games.find(g => g.id === gameID);
 
-        let estimatedFPS =
-            Math.round(selectedGame.fps * 0.75);
+
+    if (!game) {
 
         result.innerHTML = `
-            🟢 <strong>GOOD</strong>
-
-            <br><br>
-
-            Your laptop should run
-            <strong>${selectedGame.name}</strong>.
-
-            <br><br>
-
-            🎮 Estimated FPS:
-            <strong>${estimatedFPS} FPS</strong>
-
-            <br>
-
-            ⚙️ Recommended settings:
-            <strong>Medium</strong>
+            <div class="result-warning">
+                ⚠️ Game information could not be found.
+            </div>
         `;
 
+        return;
     }
 
 
-    /* =========================
-       LOW
-       ========================= */
+    const cpuScore = getCPUScore(cpu);
 
-    else if (performanceScore === 2) {
+    const gpuScore = getGPUScore(gpu);
 
-        let estimatedFPS =
-            Math.round(selectedGame.fps * 0.50);
 
-        result.innerHTML = `
-            🟡 <strong>PLAYABLE</strong>
+    // Check individual requirements
 
-            <br><br>
+    const ramOK =
+        ram >= game.minimum.ram;
 
-            Your laptop may run
-            <strong>${selectedGame.name}</strong>,
-            but performance may be limited.
+    const storageOK =
+        storage >= game.storage;
 
-            <br><br>
+    const cpuOK =
+        cpuScore >= game.minimum.cpu;
 
-            🎮 Estimated FPS:
-            <strong>${estimatedFPS} FPS</strong>
+    const gpuOK =
+        gpuScore >= game.minimum.gpu;
 
-            <br>
 
-            ⚙️ Recommended settings:
-            <strong>Low</strong>
-        `;
+    // Count successful requirements
+
+    let score = 0;
+
+    if (ramOK) score++;
+
+    if (storageOK) score++;
+
+    if (cpuOK) score++;
+
+    if (gpuOK) score++;
+
+
+    let status;
+
+    let fps;
+
+    let settings;
+
+
+    // ===============================
+    // PERFORMANCE RESULT
+    // ===============================
+
+    if (score === 4) {
+
+        status = "EXCELLENT";
+
+        fps = game.baseFPS;
+
+        settings = "High";
 
     }
 
+    else if (score === 3) {
 
-    /* =========================
-       NOT RECOMMENDED
-       ========================= */
+        status = "GOOD";
+
+        fps = Math.round(game.baseFPS * 0.75);
+
+        settings = "Medium";
+
+    }
+
+    else if (score === 2) {
+
+        status = "PLAYABLE";
+
+        fps = Math.round(game.baseFPS * 0.5);
+
+        settings = "Low";
+
+    }
 
     else {
 
-        result.innerHTML = `
-            🔴 <strong>NOT RECOMMENDED</strong>
+        status = "NOT RECOMMENDED";
 
-            <br><br>
+        fps = "Below 30";
 
-            Your laptop may struggle to run
-            <strong>${selectedGame.name}</strong>.
-
-            <br><br>
-
-            💡 Consider upgrading your
-            RAM or graphics card.
-        `;
+        settings = "Very Low";
 
     }
+
+
+    // ===============================
+    // DISPLAY RESULT
+    // ===============================
+
+    result.innerHTML = `
+
+        <div class="compatibility-result">
+
+            <h3>${game.name}</h3>
+
+            <div class="result-status">
+                ${status}
+            </div>
+
+            <p>
+                🎮 Estimated FPS:
+                <strong>${fps}</strong>
+            </p>
+
+            <p>
+                ⚙️ Suggested Settings:
+                <strong>${settings}</strong>
+            </p>
+
+            <div class="requirements-check">
+
+                <p>
+                    ${ramOK ? "✅" : "❌"}
+                    RAM: ${ram}GB
+                    (Minimum ${game.minimum.ram}GB)
+                </p>
+
+                <p>
+                    ${storageOK ? "✅" : "❌"}
+                    Storage: ${storage}GB
+                    (Needs ${game.storage}GB)
+                </p>
+
+                <p>
+                    ${cpuOK ? "✅" : "❌"}
+                    Processor
+                </p>
+
+                <p>
+                    ${gpuOK ? "✅" : "❌"}
+                    Graphics Card
+                </p>
+
+            </div>
+
+        </div>
+
+    `;
 
 }
