@@ -55,7 +55,8 @@
 
     </section>
 
- <!-- LAPTOP CHECKER -->
+<!-- LAPTOP CHECKER -->
+
 <section class="checker" id="checker">
 
     <h2>💻 Can Your Laptop Run It?</h2>
@@ -66,15 +67,18 @@
 
     <div class="checker-box">
 
+        <!-- RAM -->
         <label for="ram">RAM (GB)</label>
 
         <input
             type="number"
             id="ram"
             placeholder="Example: 8"
+            min="1"
         >
 
 
+        <!-- PROCESSOR -->
         <label for="cpu">Processor</label>
 
         <select id="cpu">
@@ -92,6 +96,190 @@
             <option value="ryzen9">AMD Ryzen 9</option>
 
         </select>
+
+
+        <!-- GRAPHICS -->
+        <label for="gpu">Graphics</label>
+
+        <select id="gpu">
+
+            <option value="">Select your graphics</option>
+
+            <optgroup label="Integrated Graphics">
+
+                <option value="hd4000">
+                    Intel HD Graphics 4000
+                </option>
+
+                <option value="hd4400">
+                    Intel HD Graphics 4400
+                </option>
+
+                <option value="hd520">
+                    Intel HD Graphics 520
+                </option>
+
+                <option value="uhd620">
+                    Intel UHD Graphics 620
+                </option>
+
+                <option value="uhd630">
+                    Intel UHD Graphics 630
+                </option>
+
+                <option value="irisxe">
+                    Intel Iris Xe
+                </option>
+
+                <option value="vega3">
+                    AMD Radeon Vega 3
+                </option>
+
+                <option value="vega8">
+                    AMD Radeon Vega 8
+                </option>
+
+            </optgroup>
+
+
+            <optgroup label="Dedicated Graphics">
+
+                <option value="gtx750">
+                    NVIDIA GTX 750
+                </option>
+
+                <option value="gtx1050">
+                    NVIDIA GTX 1050
+                </option>
+
+                <option value="gtx1650">
+                    NVIDIA GTX 1650
+                </option>
+
+                <option value="gtx1660">
+                    NVIDIA GTX 1660
+                </option>
+
+                <option value="rtx2060">
+                    NVIDIA RTX 2060
+                </option>
+
+                <option value="rtx3060">
+                    NVIDIA RTX 3060
+                </option>
+
+                <option value="rtx4060">
+                    NVIDIA RTX 4060
+                </option>
+
+            </optgroup>
+
+        </select>
+
+
+        <!-- STORAGE TYPE -->
+        <label for="storageType">Storage Type</label>
+
+        <select id="storageType">
+
+            <option value="">
+                Select storage type
+            </option>
+
+            <option value="ssd">
+                SSD
+            </option>
+
+            <option value="hdd">
+                HDD
+            </option>
+
+        </select>
+
+
+        <!-- STORAGE CAPACITY -->
+        <label for="storage">Free Storage (GB)</label>
+
+        <input
+            type="number"
+            id="storage"
+            placeholder="Example: 100"
+            min="1"
+        >
+
+
+        <!-- GAME -->
+        <label for="game">Choose a Game</label>
+
+        <select id="game">
+
+            <option value="">
+                Select a game
+            </option>
+
+            <option value="gta5">
+                GTA V
+            </option>
+
+            <option value="hitman2">
+                Hitman 2
+            </option>
+
+            <option value="farcry4">
+                Far Cry 4
+            </option>
+
+            <option value="watchdogs">
+                Watch Dogs
+            </option>
+
+            <option value="gta4">
+                GTA IV
+            </option>
+
+            <option value="farcry3">
+                Far Cry 3
+            </option>
+
+            <option value="farcry5">
+                Far Cry 5
+            </option>
+
+            <option value="watchdogs2">
+                Watch Dogs 2
+            </option>
+
+            <option value="mgsv">
+                Metal Gear Solid V
+            </option>
+
+            <option value="sleepingdogs">
+                Sleeping Dogs
+            </option>
+
+            <option value="rdr2">
+                Red Dead Redemption 2
+            </option>
+
+            <option value="hitman3">
+                Hitman 3
+            </option>
+
+        </select>
+
+
+        <!-- CHECK BUTTON -->
+        <button onclick="checkGame()">
+            🔍 Check Compatibility
+        </button>
+
+    </div>
+
+
+    <!-- RESULT -->
+    <div id="result"></div>
+
+</section>
 
 <label for="gpu">Graphics Card</label>
 
